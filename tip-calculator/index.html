@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Tip Calculator</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="splitter">
+        <!-- TITLE -->
+        <article class="title-article">
+            <div class="title-container">
+                <h1 class="title">SPLI<br/>TTER</h1>
+            </div>
+        </article>
+        <!-- END OF TITLE -->
+        <!-- CALCULATOR -->
+        <article class="calculator-article">
+            <!-- USER INPUT -->
+            <div class="user-input">
+                <div class="bill">
+                    <h2>Bill</h2>
+                    <img src="./images/icon-dollar.svg" alt="$" class="icon">
+                    <input type="number" id="bill-input" class="bill-input" placeholder="0">
+                </div>
+                <div class="select-tip">
+                    <h2>Select Tip %</h2>
+                    <form action="">
+                        <datalist type="text" id="tip-option-list" name="percentage" class="custom-select">
+                            <option value="5" id="option5" class="option">5%</option>
+                            <option value="10" id="option10" class="option">10%</option>
+                            <option value="15" id="option15" class="option">15%</option>
+                            <option value="25" id="option25" class="option">25%</option>
+                            <option value="50" id="option50" class="option">50%</option>
+                            <option value="custom-option" id="custom-container"><input type="number" id="custom" class="option" placeholder="Custom" list="tip-option-list"></option>
+                        </datalist>
+                    </form>
+                    <!-- <div class="options-container">
+                        <div id="option5" class="option">5%</div>
+                        <div id="option10" class="option">10%</div>
+                        <div id="option15" class="option">15%</div>
+                        <div id="option25" class="option">25%</div>
+                        <div id="option50" class="option">50%</div>
+                        <div id="option-custom"><input type="number" id="custom" class="custom-option" placeholder="Custom"></div>
+                    </div> -->
+                </div>
+                <div class="people">
+                    <h2>Number of people</h2>
+                    <img src="./images/icon-person.svg" alt="P" class="icon">
+                    <input type="number" id="people" class="number-of-people-input" placeholder="0">
+                </div>
+            </div>
+            <!-- END OF USER INPUT -->
+            <!-- USER OUTPUT -->
+            <div class="user-output">
+                <div class="output-amount-container">
+                    <div class="output-amount">
+                        <div class="tip-amount-container">
+                            <div class="tip-amount">
+                                <div class="tip-text-container">
+                                    <h2 class="tip">Tip Amount</h2>
+                                    <h3>/person</h3>
+                                </div>
+                                <div id="tip-amount" class="tip-value">$0.00</div>
+                            </div>
+                            <div class="tip-amount">
+                                <div class="tip-text-container">
+                                    <h2 class="tip">Total</h2>
+                                    <h3>/person</h3>
+                                </div>
+                                <div id="tip-total" class="tip-value">$0.00</div>
+                            </div>
+                        </div>
+                        <button id="reset-btn" class="reset-btn">RESET</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF USER OUTPUT -->
+        </article>
+        <!-- END OF CALCULATOR -->
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
+
+                        <!-- <select>
+                            <option value="5" id="option5" class="option">5%</option>
+                            <option value="10" id="option10" class="option">10%</option>
+                            <option value="15" id="option15" class="option">15%</option>
+                            <option value="25" id="option25" class="option">25%</option>
+                            <option value="50" id="option50" class="option">50%</option>
+                            <option value="custom"><input type="number" id="custom" class="custom-option" placeholder="Custom"></option>
+                        </select> -->
