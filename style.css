@@ -64,6 +64,7 @@ h3 {
 }
 
 input {
+  height: 42px;
   width: 100%;
   background-color: var(--clr-light-grayish-cyan-1);
   border: none;
@@ -143,13 +144,23 @@ INPUT
   font-weight: 600;
 }
 
+.icon-container {
+  display: flex;
+  height: 42px;
+  width: 100%;
+  margin-bottom: -42px;
+  align-items: center;
+  justify-content: start;
+}
+
 .icon {
-  position: absolute;
+  /* position: absolute; */
   font-size: 1rem;
   color: var(--clr-dark-grayish-cyan-1);
-  transform: translate(50%, 65%);
   padding-left: 0.5rem;
   height: 19px;
+  z-index: 2;
+  /* margin-bottom: -100%; */
 }
 
 .options-container {
