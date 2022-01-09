@@ -9,6 +9,7 @@ const option10 = document.querySelector('#option10')
 const option15 = document.querySelector('#option15')
 const option25 = document.querySelector('#option25')
 const option50 = document.querySelector('#option50')
+const form = document.querySelector('form')
 
 
 // Outputs
@@ -23,6 +24,7 @@ let currentBill = 0
 let currentPeople = 0
 let currentTipAmountPP = 0
 let currentTotalPP = 0
+let customValue = 0
 
 class CustomSelect {
     constructor(originalSelect){
@@ -83,11 +85,34 @@ document.querySelectorAll('.custom-select').forEach(selectElement => {
     new CustomSelect(selectElement)
 })
 
+form.addEventListener('keyup', (e) => {
+    customValue = e.target.value
+    // console.log(e.target.value)
+    // console.log(customValue)
+})
+
 document.addEventListener('click', () => {
     document.querySelectorAll('.option').forEach(el => {
-        if(el.classList.contains('option-selected')){
+        if(el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '%'){
             tipPercentage = parseInt(el.innerHTML, 10);
-            console.log(tipPercentage);
+            // console.log(el.innerHTML.slice(-1))
+            // console.log(tipPercentage);
+        } else if (el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '>'){
+            tipPercentage = customValue
+            console.log(tipPercentage)
+        }
+    })
+})
+
+document.addEventListener('keyup', () => {
+    document.querySelectorAll('.option').forEach(el => {
+        if(el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '%'){
+            tipPercentage = parseInt(el.innerHTML, 10);
+            // console.log(el.innerHTML.slice(-1))
+            // console.log(tipPercentage);
+        } else if (el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '>'){
+            tipPercentage = customValue
+            console.log(tipPercentage)
         }
     })
 })
@@ -159,8 +184,8 @@ document.addEventListener('keyup', () => {
         //     bill.style.border = '2px solid red'
         // }
 
-        console.log(currentTipAmountPP);
-        console.log(currentTotalPP);
+        // console.log(currentTipAmountPP);
+        // console.log(currentTotalPP);
 })
 
 // RESET BUTTON
