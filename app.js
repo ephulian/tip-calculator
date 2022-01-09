@@ -87,7 +87,7 @@ document.querySelectorAll('.custom-select').forEach(selectElement => {
 
 form.addEventListener('keyup', (e) => {
     customValue = e.target.value
-    // console.log(e.target.value)
+    console.log(e.target)
     // console.log(customValue)
 })
 
@@ -195,6 +195,8 @@ resetButton.addEventListener('click', () => {
 
     bill.value = null
     people.value = null
+
+    // console.log(form.childNodes[1].childNodes[11].childNodes[0])
 
     document.querySelectorAll('.option').forEach(e => {
         e.classList.remove('option-selected')
