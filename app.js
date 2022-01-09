@@ -10,6 +10,7 @@ const option15 = document.querySelector('#option15')
 const option25 = document.querySelector('#option25')
 const option50 = document.querySelector('#option50')
 const form = document.querySelector('form')
+const allOptions = document.getElementsByClassName('option')
 
 
 // Outputs
@@ -87,19 +88,15 @@ document.querySelectorAll('.custom-select').forEach(selectElement => {
 
 form.addEventListener('keyup', (e) => {
     customValue = e.target.value
-    console.log(e.target)
-    // console.log(customValue)
+    console.log(allOptions[12].value)
 })
 
 document.addEventListener('click', () => {
     document.querySelectorAll('.option').forEach(el => {
         if(el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '%'){
             tipPercentage = parseInt(el.innerHTML, 10);
-            // console.log(el.innerHTML.slice(-1))
-            // console.log(tipPercentage);
         } else if (el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '>'){
             tipPercentage = customValue
-            console.log(tipPercentage)
         }
     })
 })
@@ -108,11 +105,8 @@ document.addEventListener('keyup', () => {
     document.querySelectorAll('.option').forEach(el => {
         if(el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '%'){
             tipPercentage = parseInt(el.innerHTML, 10);
-            // console.log(el.innerHTML.slice(-1))
-            // console.log(tipPercentage);
         } else if (el.classList.contains('option-selected') && el.innerHTML.slice(-1) == '>'){
             tipPercentage = customValue
-            console.log(tipPercentage)
         }
     })
 })
@@ -196,7 +190,7 @@ resetButton.addEventListener('click', () => {
     bill.value = null
     people.value = null
 
-    // console.log(form.childNodes[1].childNodes[11].childNodes[0])
+    allOptions[12].value = null
 
     document.querySelectorAll('.option').forEach(e => {
         e.classList.remove('option-selected')
